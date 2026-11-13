@@ -14,14 +14,17 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "spotube-jam",
   "main": "src/index.ts",
   "compatibility_date": "2026-10-01",
+
   "observability": {
     "enabled": true
-  
+  },
+
   "durable_objects": {
     "bindings": [
       {
@@ -30,6 +33,7 @@
       }
     ]
   },
+
   "migrations": [
     {
       "tag": "v1",
@@ -38,9 +42,7 @@
       ]
     }
   ],
-  // Room connects per client IP: slows down code guessing and connection floods, which
-  // wake (and bill) rooms. Generous because carrier-grade NAT puts many phones behind
-  // one IP. Enforced per Cloudflare location, so approximate.
+
   "ratelimits": [
     {
       "name": "CONNECT_LIMITER",

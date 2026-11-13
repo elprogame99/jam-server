@@ -21,12 +21,6 @@
   "compatibility_date": "2026-10-01",
   "observability": {
     "enabled": true
-  },
-  "routes": [
-    {
-      "pattern": "jam.spotube.cc",
-      "custom_domain": true
-    }
   ],
   "durable_objects": {
     "bindings": [
